@@ -1,10 +1,10 @@
 <script>
-    export let website
+    export let website;
 
-    import arrowRight from '$lib/assets/arrow_right.svg';
+    import arrowRight from "$lib/assets/arrow_right.svg";
 
     const faviconAPI =
-		'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=';
+        "https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=";
 </script>
 
 <article class="website">
@@ -14,7 +14,7 @@
                 <img
                     height="60"
                     src="{faviconAPI}{website.homepage}/&size=128"
-                    alt=""
+                    alt="logo"
                 />
                 <h2 class="name">{website.titel}</h2>
             </div>
@@ -25,14 +25,9 @@
             <span>Laatst bewerkt: 12 min. geleden</span>
 
             <div class="progress-container">
-                <progress
-                    id="progress-partner"
-                    max="100"
-                    value="50"
-                />
-                <label
-                    class="progress-percentage"
-                    for="progress-partner">50%</label
+                <progress id="progress-partner" max="100" value="50" />
+                <label class="progress-percentage" for="progress-partner"
+                    >50%</label
                 >
             </div>
         </section>
@@ -43,7 +38,7 @@
     article {
         display: flex;
     }
-    
+
     article a {
         display: flex;
         flex-direction: column;
@@ -64,56 +59,56 @@
     }
 
     .logo-partner-section {
-		display: flex;
-		align-items: flex-start;
-		justify-content: space-between;
-	}
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
 
-	h2 {
-		font-size: 1.5em;
-		margin-top: 0.05em;
-	}
+    h2 {
+        font-size: 1.5em;
+        margin-top: 0.05em;
+    }
 
-	.more-info-section {
-		display: flex;
-		flex-direction: column;
-		font-size: 0.9em;
-	}
+    .more-info-section {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.9em;
+    }
 
-	/* progress bar */
-	.progress-container {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: flex-end;
-		gap: 1em;
-		margin-top: 0.25em;
-	}
+    /* progress bar */
+    .progress-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 1em;
+        margin-top: 0.25em;
+    }
 
-	progress {
-		width: 100%;
-	}
+    progress {
+        width: 100%;
+    }
 
-	progress[value] {
-		/* Reset the default appearance */
-		-webkit-appearance: none;
-		appearance: none;
-		height: 60%;
-	}
+    progress[value] {
+        /* Reset the default appearance */
+        -webkit-appearance: none;
+        appearance: none;
+        height: 60%;
+    }
 
-	/* chrome/safari */
-	progress[value]::-webkit-progress-bar {
-		background-color: var(--c-container-stroke);
-		border-radius: 0.5em;
-	}
+    /* chrome/safari */
+    progress[value]::-webkit-progress-bar {
+        background-color: var(--c-container-stroke);
+        border-radius: 0.5em;
+    }
 
-	progress[value]::-webkit-progress-value {
-		background-color: var(--c-pink);
-		border-radius: 0.5em;
-		transition: 1s ease-out;
-	}
+    progress[value]::-webkit-progress-value {
+        background-color: var(--c-pink);
+        border-radius: 0.5em;
+        transition: 1s ease-out;
+    }
 
-	.progress-percentage {
-		height: 85%;
-	}
+    .progress-percentage {
+        height: 85%;
+    }
 </style>

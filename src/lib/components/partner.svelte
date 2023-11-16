@@ -28,11 +28,11 @@
                 <progress
                     id="progress-partner"
                     max="100"
-                    value="0"
+                    value="50"
                 />
                 <label
                     class="progress-percentage"
-                    for="progress-partner">0%</label
+                    for="progress-partner">50%</label
                 >
             </div>
         </section>
@@ -62,4 +62,58 @@
     article a:hover {
         border: solid 1px var(--c-pink);
     }
+
+    .logo-partner-section {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+
+	h2 {
+		font-size: 1.5em;
+		margin-top: 0.05em;
+	}
+
+	.more-info-section {
+		display: flex;
+		flex-direction: column;
+		font-size: 0.9em;
+	}
+
+	/* progress bar */
+	.progress-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-end;
+		gap: 1em;
+		margin-top: 0.25em;
+	}
+
+	progress {
+		width: 100%;
+	}
+
+	progress[value] {
+		/* Reset the default appearance */
+		-webkit-appearance: none;
+		appearance: none;
+		height: 60%;
+	}
+
+	/* chrome/safari */
+	progress[value]::-webkit-progress-bar {
+		background-color: var(--c-container-stroke);
+		border-radius: 0.5em;
+	}
+
+	progress[value]::-webkit-progress-value {
+		background-color: var(--c-pink);
+		border-radius: 0.5em;
+		transition: 1s ease-out;
+	}
+
+	.progress-percentage {
+		height: 85%;
+	}
 </style>

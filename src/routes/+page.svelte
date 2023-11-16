@@ -16,9 +16,6 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
         gap: 1em;
-
-        list-style-type: none;
-        margin: 0 1em;
-        margin-bottom: 1em;
+        margin: 1em;
     }
 </style>

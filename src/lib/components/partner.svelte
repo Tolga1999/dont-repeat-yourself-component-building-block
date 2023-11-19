@@ -32,7 +32,7 @@
         </section>
 
         <section class="more-info-section">
-            <p>Laatst bewerkt: 12 min. geleden</p>
+            <p>Laatst bewerkt: 12 minuten geleden</p>
 
             <div class="progress-container">
                 <progress
@@ -133,5 +133,9 @@
 
     .progress-percentage {
         height: 85%;
+    }
+
+    :focus{
+        outline: 2px solid var(--c-pink);
     }
 </style>

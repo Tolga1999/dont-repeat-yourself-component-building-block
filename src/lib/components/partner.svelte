@@ -1,7 +1,19 @@
 <script>
+    // how to make a client side javascript condition check?
     export let website;
 
-    import arrowRight from "$lib/assets/arrow_right.svg";
+    import { onMount } from "svelte";
+
+    let labelValue;
+    let progressbar;
+
+    // runs after the component is first rendered to the DOM.
+    onMount(() => {
+        let random = Math.floor(Math.random() * 100);
+
+        progressbar.value = random;
+        labelValue.innerHTML = random + "%";
+    });
 
     const faviconAPI =
         "https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=";
@@ -10,24 +22,29 @@
 <article class="website">
     <a href={website.slug}>
         <section class="logo-partner-section">
-            <div>
-                <img
-                    height="60"
-                    src="{faviconAPI}{website.homepage}/&size=128"
-                    alt="logo"
-                />
-                <h2 class="name">{website.titel}</h2>
-            </div>
-            <img src={arrowRight} alt="arrow right" />
+            <img
+                height="60"
+                src="{faviconAPI}{website.homepage}/&size=128"
+                alt="partner logo"
+                loading="lazy"
+            />
+            <h2 class="name">{website.titel}</h2>
         </section>
 
         <section class="more-info-section">
-            <span>Laatst bewerkt: 12 min. geleden</span>
+            <p>Laatst bewerkt: 12 min. geleden</p>
 
             <div class="progress-container">
-                <progress id="progress-partner" max="100" value="50" />
-                <label class="progress-percentage" for="progress-partner"
-                    >50%</label
+                <progress
+                    id="progress-partner"
+                    max="100"
+                    value="0"
+                    bind:this={progressbar}
+                />
+                <label
+                    class="progress-percentage"
+                    for="progress-partner"
+                    bind:this={labelValue}>0%</label
                 >
             </div>
         </section>
@@ -65,8 +82,14 @@
     }
 
     h2 {
-        font-size: 1.5em;
+        font-size: 1.25em;
         margin-top: 0.05em;
+        margin-left: 0.5em;
+    }
+
+    p {
+        font-size: 1em;
+        font-weight: 400;
     }
 
     .more-info-section {
